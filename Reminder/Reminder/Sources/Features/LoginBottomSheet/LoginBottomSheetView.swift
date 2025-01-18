@@ -9,11 +9,13 @@ import Foundation
 import UIKit
 
 class LoginBottomSheetView: UIView {
+    public weak var delegate: LoginBottomSheetViewDelegate?
     
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "login.welcome.title".localized
         label.isUserInteractionEnabled = true
+        label.font = Typography.subHeading
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -32,6 +34,14 @@ class LoginBottomSheetView: UIView {
         label.isUserInteractionEnabled = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private let handleArea: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        view.layer.cornerRadius = Metrics.little
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     private let emailTextField: UITextField = {
@@ -56,6 +66,8 @@ class LoginBottomSheetView: UIView {
         button.setTitle("login.button.title".localized, for: .normal)
         button.backgroundColor = Colors.primaryRedBase
         button.layer.cornerRadius = Metrics.medium
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        button.titleLabel?.font = Typography.subHeading
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -67,7 +79,6 @@ class LoginBottomSheetView: UIView {
         
         let exampleGest = UITapGestureRecognizer(target: self, action: #selector(exampleTapped))
         titleLabel.addGestureRecognizer(exampleGest)
-        
     }
     
     required init?(coder: NSCoder) {
@@ -78,7 +89,6 @@ class LoginBottomSheetView: UIView {
     private func exampleTapped() {
         print("clicou na label")
     }
-    
     
     private func setupUI() {
         self.backgroundColor = .white
@@ -96,11 +106,13 @@ class LoginBottomSheetView: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: Metrics.huge),
+            
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: Metrics.medium),
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
             
             loginTextFieldLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.medium),
             loginTextFieldLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
+            
             
             emailTextField.topAnchor.constraint(equalTo: loginTextFieldLabel.bottomAnchor, constant: Metrics.medium),
             emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
@@ -115,10 +127,18 @@ class LoginBottomSheetView: UIView {
             passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.medium),
             passwordTextField.heightAnchor.constraint(equalToConstant: Metrics.inputSize),
             
+
             loginButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
             loginButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.medium),
             loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Metrics.huge),
             loginButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize)
         ])
+    }
+    
+    @objc
+    private func loginButtonTapped() {
+        let password = passwordTextField.text ?? ""
+        let user = emailTextField.text ?? ""
+        delegate?.sendLoginData(user: user, password: password)
     }
 }
