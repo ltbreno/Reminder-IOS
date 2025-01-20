@@ -66,6 +66,12 @@
 		FE6DB33E2D3D787100924289 /* SplashFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6DB33D2D3D787100924289 /* SplashFlowDelegate.swift */; };
 		FE6DB33F2D3D787100924289 /* SplashFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6DB33D2D3D787100924289 /* SplashFlowDelegate.swift */; };
 		FE6DB3402D3D787100924289 /* SplashFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6DB33D2D3D787100924289 /* SplashFlowDelegate.swift */; };
+		FE6DB3452D3D7E1100924289 /* ViewControllersFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6DB3442D3D7E1100924289 /* ViewControllersFactoryProtocol.swift */; };
+		FE6DB3462D3D7E1100924289 /* ViewControllersFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6DB3442D3D7E1100924289 /* ViewControllersFactoryProtocol.swift */; };
+		FE6DB3472D3D7E1100924289 /* ViewControllersFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6DB3442D3D7E1100924289 /* ViewControllersFactoryProtocol.swift */; };
+		FE6DB3492D3D7E5C00924289 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6DB3482D3D7E5C00924289 /* ViewControllersFactory.swift */; };
+		FE6DB34A2D3D7E5C00924289 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6DB3482D3D7E5C00924289 /* ViewControllersFactory.swift */; };
+		FE6DB34B2D3D7E5C00924289 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6DB3482D3D7E5C00924289 /* ViewControllersFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +133,8 @@
 		FE6DB3352D3D73DC00924289 /* ReminderFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReminderFlowController.swift; path = Reminder/ReminderFlowController.swift; sourceTree = SOURCE_ROOT; };
 		FE6DB3392D3D75FE00924289 /* LoginBottomSheetFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetFlowDelegate.swift; sourceTree = "<group>"; };
 		FE6DB33D2D3D787100924289 /* SplashFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFlowDelegate.swift; sourceTree = "<group>"; };
+		FE6DB3442D3D7E1100924289 /* ViewControllersFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactoryProtocol.swift; sourceTree = "<group>"; };
+		FE6DB3482D3D7E5C00924289 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +302,7 @@
 		C69943322CBEFC78009E6326 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				FE6DB3422D3D7DE000924289 /* DependencyInjection */,
 				C69943262CBEFC78009E6326 /* Constants */,
 				C69943282CBEFC78009E6326 /* Extensions */,
 				C699432E2CBEFC78009E6326 /* LoginBottomSheet */,
@@ -322,6 +331,23 @@
 				C69943362CBEFC78009E6326 /* SceneDelegate.swift */,
 			);
 			path = Reminder;
+			sourceTree = "<group>";
+		};
+		FE6DB3422D3D7DE000924289 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				FE6DB3432D3D7DF000924289 /* ViewControllersFactory */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		FE6DB3432D3D7DF000924289 /* ViewControllersFactory */ = {
+			isa = PBXGroup;
+			children = (
+				FE6DB3442D3D7E1100924289 /* ViewControllersFactoryProtocol.swift */,
+				FE6DB3482D3D7E5C00924289 /* ViewControllersFactory.swift */,
+			);
+			path = ViewControllersFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -574,6 +600,7 @@
 			files = (
 				C69943522CBEFC78009E6326 /* LoginBottomSheetViewController.swift in Sources */,
 				C69943532CBEFC78009E6326 /* String+Ext.swift in Sources */,
+				FE6DB34A2D3D7E5C00924289 /* ViewControllersFactory.swift in Sources */,
 				C69943542CBEFC78009E6326 /* LoginBottomSheetView.swift in Sources */,
 				C69943552CBEFC78009E6326 /* SceneDelegate.swift in Sources */,
 				C69943562CBEFC78009E6326 /* Colors-Constants.swift in Sources */,
@@ -583,6 +610,7 @@
 				FE6DB3372D3D73DC00924289 /* ReminderFlowController.swift in Sources */,
 				C699435A2CBEFC78009E6326 /* LoginBottomSheetViewModel.swift in Sources */,
 				C699435B2CBEFC78009E6326 /* Metrics-Constants.swift in Sources */,
+				FE6DB3462D3D7E1100924289 /* ViewControllersFactoryProtocol.swift in Sources */,
 				FE6DB33F2D3D787100924289 /* SplashFlowDelegate.swift in Sources */,
 				C699435C2CBEFC78009E6326 /* Text-Constants.swift in Sources */,
 				C699435E2CBEFC78009E6326 /* SplashViewController.swift in Sources */,
@@ -596,6 +624,7 @@
 			files = (
 				C69943612CBEFC78009E6326 /* LoginBottomSheetViewController.swift in Sources */,
 				C69943622CBEFC78009E6326 /* String+Ext.swift in Sources */,
+				FE6DB3492D3D7E5C00924289 /* ViewControllersFactory.swift in Sources */,
 				C69943632CBEFC78009E6326 /* LoginBottomSheetView.swift in Sources */,
 				C69943642CBEFC78009E6326 /* SceneDelegate.swift in Sources */,
 				C69943652CBEFC78009E6326 /* Colors-Constants.swift in Sources */,
@@ -605,6 +634,7 @@
 				FE6DB3382D3D73DC00924289 /* ReminderFlowController.swift in Sources */,
 				C69943692CBEFC78009E6326 /* LoginBottomSheetViewModel.swift in Sources */,
 				C699436A2CBEFC78009E6326 /* Metrics-Constants.swift in Sources */,
+				FE6DB3452D3D7E1100924289 /* ViewControllersFactoryProtocol.swift in Sources */,
 				FE6DB33E2D3D787100924289 /* SplashFlowDelegate.swift in Sources */,
 				C699436B2CBEFC78009E6326 /* Text-Constants.swift in Sources */,
 				C699436D2CBEFC78009E6326 /* SplashViewController.swift in Sources */,
@@ -618,6 +648,7 @@
 			files = (
 				C699433D2CBEFC78009E6326 /* LoginBottomSheetViewController.swift in Sources */,
 				C699433E2CBEFC78009E6326 /* String+Ext.swift in Sources */,
+				FE6DB34B2D3D7E5C00924289 /* ViewControllersFactory.swift in Sources */,
 				C699433F2CBEFC78009E6326 /* LoginBottomSheetView.swift in Sources */,
 				C69943402CBEFC78009E6326 /* SceneDelegate.swift in Sources */,
 				C69943412CBEFC78009E6326 /* Colors-Constants.swift in Sources */,
@@ -627,6 +658,7 @@
 				FE6DB3362D3D73DC00924289 /* ReminderFlowController.swift in Sources */,
 				C69943452CBEFC78009E6326 /* LoginBottomSheetViewModel.swift in Sources */,
 				C69943462CBEFC78009E6326 /* Metrics-Constants.swift in Sources */,
+				FE6DB3472D3D7E1100924289 /* ViewControllersFactoryProtocol.swift in Sources */,
 				FE6DB3402D3D787100924289 /* SplashFlowDelegate.swift in Sources */,
 				C69943472CBEFC78009E6326 /* Text-Constants.swift in Sources */,
 				C69943492CBEFC78009E6326 /* SplashViewController.swift in Sources */,
